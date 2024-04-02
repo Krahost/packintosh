@@ -101,6 +101,10 @@
                         <label for="">Hostel</label>
                         <input type="text" name="hostel" placeholder="Ex: Your Hostel"  value="">
                     </div>
+                    <div class="dash-input-wrapper mb-30">
+                        <label for="">Phone Number</label>
+                        <input type="tel" name="phone_number" placeholder="Phone Number"  value="">
+                    </div>
                     <!-- /.dash-input-wrapper -->
                    
                    

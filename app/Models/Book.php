@@ -20,6 +20,7 @@ class Book extends Model
     'total_amount',
     'months',
     'duration',
+    'phone_number',
     'address',
     'latitude',
     'longitude',

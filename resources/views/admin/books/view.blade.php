@@ -55,6 +55,9 @@
           <div class="col-12 col-xl-8 mb-4 mb-xl-0">
             <h3>Booking Id: {{$book->id}}</h3>
             <p>Name: {{ $book->user->name }}</p>
+            <p>Campus: {{ $book->instituition }}</p>
+            <p>Hostel: {{ $book->hostel }}</p>
+            <p>Phone: {{ $book->phone_number }}</p>
             <p>Package: GHC{{$book->total_amount}}</p>
             <p>Date of Pick Up: {{$book->pickup}}</p>
             <p>Date of Return: {{$book->return}}</p>
@@ -192,34 +195,41 @@
     </script>
 
      
-    <script>
-      //IMAGE ZOOM FUNCTIONALITY
-      document.addEventListener('DOMContentLoaded', function() {
-          // Event listener for clicking on an image to zoom
-          document.querySelectorAll('.zoomable-image').forEach(function(img) {
-              img.addEventListener('click', function() {
-                  // Create an overlay div
-                  const overlay = document.createElement('div');
-                  overlay.classList.add('zoom-overlay');
-      
-                  // Create a clone of the image to display in the overlay
-                  const zoomedImage = img.cloneNode();
-                  zoomedImage.style.width = '80%'; // Adjust the size of the zoomed image
-      
-                  // Add the zoomed image to the overlay
-                  overlay.appendChild(zoomedImage);
-      
-                  // Add the overlay to the body
-                  document.body.appendChild(overlay);
-      
-                  // Event listener for clicking on the overlay to close it
-                  overlay.addEventListener('click', function() {
-                      document.body.removeChild(overlay);
-                  });
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.booking-image').forEach(function(img) {
+          img.addEventListener('click', function() {
+              // Create an overlay div
+              const overlay = document.createElement('div');
+              overlay.style.position = 'fixed';
+              overlay.style.top = '0';
+              overlay.style.left = '0';
+              overlay.style.width = '100%';
+              overlay.style.height = '100%';
+              overlay.style.backgroundColor = 'rgba(0,0,0,0.8)';
+              overlay.style.display = 'flex';
+              overlay.style.alignItems = 'center';
+              overlay.style.justifyContent = 'center';
+              overlay.style.zIndex = '1000';
+              overlay.style.cursor = 'pointer';
+  
+              // Create a clone of the image to display in the overlay
+              const overlayImage = img.cloneNode();
+              overlayImage.style.maxWidth = '90%'; // Prevents the image from being too large
+              overlayImage.style.maxHeight = '80%'; // Keeps the image within the viewport
+              overlay.appendChild(overlayImage); // Adds the image to the overlay
+  
+              document.body.appendChild(overlay); // Adds the overlay to the page
+  
+              // Removes the overlay when clicked
+              overlay.addEventListener('click', function() {
+                  document.body.removeChild(overlay);
               });
           });
       });
-      </script>
+  });
+  </script>
       
   
   <!-- content-wrapper ends -->

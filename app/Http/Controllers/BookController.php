@@ -42,6 +42,7 @@ class BookController extends Controller
     $validatedData = $request->validate([
       'institution' => 'required|string',
       'hostel' => 'required|string',
+      'phone_number' => 'required|string',
       'duration' => 'string',
       'jute_boxes' => 'required|string',
       'months' => 'required|string',
@@ -60,6 +61,7 @@ class BookController extends Controller
     $book = Book::create([
       'institution' => $request->input('institution'),
       'hostel' => $request->input('hostel'),
+      'phone_number' => $request->input('phone_number'),
       'duration' => $request->input('duration'),
       'months' => $request->input('months'),
       'jute_boxes' => $request->input('jute_boxes'),

@@ -71,7 +71,7 @@ class AdminController extends Controller
         //     ->paginate(10);
 
         $books = Book::with('user')
-            ->where('user_id', Auth::user()->id) // Filters books for the logged-in user
+            //  ->where('user_id', Auth::user()->id) // Filters books for the logged-in user
             ->where('Status', '=', 'pending') // include books that are pending
             ->orderBy('pickup', 'asc') // Assuming 'pickup_date' is the field name
             ->paginate(10);

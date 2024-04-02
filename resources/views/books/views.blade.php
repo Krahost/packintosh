@@ -139,9 +139,10 @@ transform: scale(1.1); /* Zoom effect on hover */
         <div class="row">
           <div class="col-12 col-xl-8 mb-4 mb-xl-0">
             <h3>Campus: {{$book->institution}}</h3>
-            <p>Hostel: {{$book->institution}}</p>
+            <p>Hostel: {{$book->hostel}}</p>
+            <p>Phone: {{$book->phone_number}}</p>
             <p>Name: {{ $book->user->name }}</p>
-            <p>Durtion:{{$book->months}} Month(s)</p>
+            <p>Durtion: {{$book->months}} Month(s)</p>
             <p>Total Payment: GHC{{$book->total_amount}}</p>
             <p>Date of Pick Up: {{$book->pickup}}</p>
             <p>Date of Return: {{$book->return}}</p>

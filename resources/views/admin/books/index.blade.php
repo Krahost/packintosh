@@ -177,7 +177,7 @@
                
               </td>
               <td>
-                {{$book->user->phone}}
+                {{$book->phone_number}}
               </td>
               
               <td>
